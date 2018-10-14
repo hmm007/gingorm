@@ -1,17 +1,16 @@
 package controllers
 
 import (
-    "github.com/gin-gonic/gin"
-    "github.com/alexandercrosson/gingorm/middlewares"
+	"github.com/gin-gonic/gin"
+	"github.com/hmm007/gingorm/middlewares"
 )
 
 const userId string = "abc123"
 
 func Auth(c *gin.Context) {
-    token, err := middlewares.GenerateToken([]byte(middlewares.SigningKey), userId)
-    if err != nil {
+	token, err := middlewares.GenerateToken([]byte(middlewares.SigningKey), userId)
+	if err != nil {
 
-    }
-    c.JSON(200, token)
+	}
+	c.JSON(200, token)
 }
-
